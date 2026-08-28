@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P T D Fernando — Computer Science Undergraduate</title>
+<meta name="description" content="Portfolio of P T D Fernando, Computer Science undergraduate at Kotelawala Defence University (KDU).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="scanline" aria-hidden="true"></div>
+<canvas id="grid-canvas" aria-hidden="true"></canvas>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a href="#top" class="nav__logo">PTDF<span class="cursor-dot">_</span></a>
+  <nav class="nav__links">
+    <a href="#about" data-label="about">about</a>
+    <a href="#education" data-label="education">education</a>
+    <a href="#skills" data-label="skills">skills</a>
+    <a href="#projects" data-label="projects">projects</a>
+    <a href="#contact" data-label="contact">contact</a>
+  </nav>
+  <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero__inner">
+    <div class="hero__content">
+      <div class="hero__photo reveal">
+        <div class="hero__photo-frame">
+          <img src="assets/profile.jpg" alt="Portrait of P T D Fernando">
+          <span class="hero__photo-corner hero__photo-corner--tl"></span>
+          <span class="hero__photo-corner hero__photo-corner--tr"></span>
+          <span class="hero__photo-corner hero__photo-corner--bl"></span>
+          <span class="hero__photo-corner hero__photo-corner--br"></span>
+        </div>
+      </div>
+
+      <h1 class="hero__name reveal">
+        <span class="hero__name-line">P&nbsp;T&nbsp;D</span>
+        <span class="hero__name-line hero__name-line--accent">FERNANDO</span>
+      </h1>
+      <p class="hero__role reveal">Computer Science Undergraduate&nbsp;/&nbsp;Kotelawala Defence University</p>
+
+      <div class="hero__cta reveal">
+        <a href="#projects" class="btn btn--primary">view projects</a>
+        <a href="assets/Tharindu_Fernando_CV.pdf" download class="btn btn--ghost">
+          <img class="btn__icon" src="assets/download.svg" alt="">
+          download cv
+        </a>
+        <a href="#contact" class="btn btn--ghost">get in touch</a>
+      </div>
+    </div>
+
+    <div class="hero__side">
+      <p class="eyebrow reveal">$ system.status</p>
+      <div class="terminal reveal" id="terminal">
+        <div class="terminal__bar">
+          <span class="terminal__tab">
+            <img class="terminal__tab-icon" src="assets/terminal.svg" alt="">
+            whoami.sh
+          </span>
+          <span class="terminal__status"><span class="terminal__status-dot"></span>running</span>
+        </div>
+        <div class="terminal__body" id="terminalBody">
+          <p><span class="prompt">$</span> <span class="cmd" id="typeCmd"></span><span class="blink" id="typeCursor">|</span></p>
+          <div class="terminal__output" id="terminalOutput"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#about" class="scroll-hint" aria-label="Scroll down">
+    <span class="scroll-hint__line"></span>
+    <span>scroll</span>
+  </a>
+</section>
+
+<main>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <p class="section__eyebrow reveal">$ whoami</p>
+  <div class="about__grid">
+    <div class="reveal">
+      <h2 class="section__title">Building things,<br>one compile at a time.</h2>
+    </div>
+    <div class="about__text reveal">
+      <p>I'm <strong>P T D Fernando</strong>, an undergraduate reading for a degree in <strong>Computer Science</strong> at the <strong>Kotelawala Defence University (KDU)</strong>, Sri Lanka. I enjoy pulling apart problems until they make sense, then putting the solution back together in code.</p>
+      <p>My interests sit somewhere between software engineering, problem solving, and the discipline that comes with a defence-university environment — structure, precision, and getting things done on time.</p>
+      <p>Off the keyboard, I'm usually reading about new tools, sharpening data-structure fundamentals, or tinkering with a side project that has no deadline but my own curiosity.</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- EDUCATION -->
+<section class="section" id="education">
+  <p class="section__eyebrow reveal">$ education --list</p>
+  <h2 class="section__title reveal">Academic record</h2>
+
+  <div class="timeline">
+    <div class="timeline__item reveal">
+      <div class="timeline__marker"></div>
+      <div class="timeline__card">
+        <span class="tag tag--active">in progress</span>
+        <h3>BSc (Hons) in Computer Science</h3>
+        <p class="timeline__meta">Kotelawala Defence University (KDU) · Sri Lanka</p>
+        <div class="progress" role="progressbar" aria-label="Computer Science degree progress" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress__header"><span>Progress</span><span>Semester 2 in progress</span></div>
+          <div class="progress__track"><span class="progress__fill" style="--progress: 25%"></span></div>
+        </div>
+        <p>Currently an undergraduate, building a foundation across programming, data structures &amp; algorithms, software engineering, databases, and systems design.</p>
+      </div>
+    </div>
+
+    <div class="timeline__item reveal">
+      <div class="timeline__marker"></div>
+      <div class="timeline__card">
+        <span class="tag tag--active">in progress</span>
+        <h3>Aquinas Diploma in English Language &amp; Literature</h3>
+        <p class="timeline__meta">Aquinas College of Higher Studies · Sri Lanka</p>
+        <div class="progress" role="progressbar" aria-label="Aquinas diploma progress" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress__header"><span>Progress</span><span>Final level in progress</span></div>
+          <div class="progress__track"><span class="progress__fill" style="--progress: 80%"></span></div>
+        </div>
+        <p>Developing professional English language proficiency with a focus on advanced grammar, formal writing, presentation skills, and business communication. Currently completing the final level of the diploma.</p>
+      </div>
+    </div>
+
+    <div class="timeline__item reveal">
+      <div class="timeline__marker"></div>
+      <div class="timeline__card">
+        <span class="tag">completed</span>
+        <h3>GCE Advanced Level</h3>
+        <p class="timeline__meta">Physical Science Stream · Bandaranayake College</p>
+        <div class="progress" role="progressbar" aria-label="Advanced Level completion" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress__header"><span>Progress</span><span>Completed</span></div>
+          <div class="progress__track"><span class="progress__fill" style="--progress: 100%"></span></div>
+        </div>
+        <div class="result-row">
+          <div class="result-chip"><span class="result-chip__subject">Combined Maths</span><span class="result-chip__grade">C</span></div>
+          <div class="result-chip"><span class="result-chip__subject">Physics</span><span class="result-chip__grade">C</span></div>
+          <div class="result-chip"><span class="result-chip__subject">ICT</span><span class="result-chip__grade">B</span></div>
+        </div>
+        <p>Built the mathematical and analytical base that led into a computing degree.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+  <p class="section__eyebrow reveal">$ skills --scan</p>
+  <h2 class="section__title reveal">Toolbox</h2>
+
+  <div class="skills__grid">
+    <div class="skill-card reveal">
+      <h3>Languages</h3>
+      <div class="chip-row">
+        <span class="chip chip--icon" title="Java"><img src="assets/java-original.svg" alt=""></span>
+        <span class="chip chip--icon" title="Python"><img src="assets/python-original.svg" alt=""></span>
+        <span class="chip chip--icon" title="C"><img src="assets/c-original.svg" alt=""></span>
+        <span class="chip chip--icon" title="C++"><img src="assets/cplusplus-original.svg" alt=""></span>
+        <span class="chip chip--icon" title="JavaScript"><img src="assets/javascript-original.svg" alt=""></span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <h3>Web &amp; Tools</h3>
+      <div class="chip-row">
+        <span class="chip chip--icon" title="HTML5"><img src="assets/html5-original.svg" alt=""></span>
+        <span class="chip chip--icon" title="CSS3"><img src="assets/css3-original.svg" alt=""></span>
+        <span class="chip chip--icon" title="Git"><img src="assets/git-original.svg" alt=""></span>
+        <span class="chip chip--icon" title="MySQL"><img src="assets/mysql-original.svg" alt=""></span>
+        <span class="chip chip--icon" title="Linux"><img src="assets/linux-original.svg" alt=""></span>
+        <span class="chip chip--icon" title="VS Code"><img src="assets/vscode-original.svg" alt=""></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <p class="section__eyebrow reveal">$ ls ./projects</p>
+  <h2 class="section__title reveal">Selected work</h2>
+
+  <div class="projects__grid">
+    <article class="project-card reveal">
+      <div class="project-card__glow" aria-hidden="true"></div>
+      <span class="project-card__index">01</span>
+      <h3>Project One</h3>
+      <p>A short description of this project goes here — what it does, the problem it solves, and why it exists.</p>
+      <div class="chip-row">
+        <span class="chip chip--sm">Java</span>
+        <span class="chip chip--sm">MySQL</span>
+      </div>
+      <a href="#" class="project-card__link">view repository →</a>
+    </article>
+
+    <article class="project-card reveal">
+      <div class="project-card__glow" aria-hidden="true"></div>
+      <span class="project-card__index">02</span>
+      <h3>Project Two</h3>
+      <p>A short description of this project goes here — what it does, the problem it solves, and why it exists.</p>
+      <div class="chip-row">
+        <span class="chip chip--sm">Python</span>
+        <span class="chip chip--sm">Flask</span>
+      </div>
+      <a href="#" class="project-card__link">view repository →</a>
+    </article>
+
+    <article class="project-card reveal">
+      <div class="project-card__glow" aria-hidden="true"></div>
+      <span class="project-card__index">03</span>
+      <h3>Project Three</h3>
+      <p>A short description of this project goes here — what it does, the problem it solves, and why it exists.</p>
+      <div class="chip-row">
+        <span class="chip chip--sm">C++</span>
+        <span class="chip chip--sm">DSA</span>
+      </div>
+      <a href="#" class="project-card__link">view repository →</a>
+    </article>
+  </div>
+  <p class="projects__note reveal">Replace these three placeholder cards with your real projects — title, description, tags and repo link.</p>
+</section>
+
+<!-- CONTACT -->
+<section class="section section--contact" id="contact">
+  <p class="section__eyebrow reveal">$ contact --init</p>
+  <div class="contact__layout">
+  <div class="contact__form-wrap reveal">
+    <h3 class="contact__form-title">Send me a message</h3>
+    <form class="contact__form" id="contactForm">
+      <label>
+        <span>Your name</span>
+        <input type="text" name="name" placeholder="Your Name" autocomplete="name" required>
+      </label>
+      <label>
+        <span>Email address</span>
+        <input type="email" name="_replyto" placeholder="Email Address" autocomplete="email" required>
+      </label>
+      <label>
+        <span>Message</span>
+        <textarea name="message" placeholder="Tell me about your project..." rows="6" required></textarea>
+      </label>
+      <button type="submit" class="contact__submit">
+        Send message
+        <img src="assets/send.svg" alt="">
+      </button>
+      <p class="contact__form-status" id="contactFormStatus" aria-live="polite"></p>
+    </form>
+  </div>
+
+  <div class="contact__info reveal">
+    <h2>Let's Talk!</h2>
+    <span class="contact__rule"></span>
+    <p>Have a project in mind? Let's discuss how we can bring your vision to life.</p>
+    <div class="contact__socials">
+      <a href="mailto:tharindudarshana856@gmail.com" class="contact__social-link" aria-label="Email me">
+        <img src="assets/mail.svg" alt="">
+      </a>
+      <a href="https://github.com/tharindu-fdo" target="_blank" rel="noopener" class="contact__social-link" aria-label="GitHub">
+        <img src="assets/github.svg" alt="">
+      </a>
+      <a href="https://www.linkedin.com/in/tharindu-darshana-635a34237/" target="_blank" rel="noopener" class="contact__social-link" aria-label="LinkedIn">
+        <img src="assets/linkedin.svg" alt="">
+      </a>
+      <a href="https://wa.me/94715771812" target="_blank" rel="noopener" class="contact__social-link" aria-label="WhatsApp">
+        <img src="assets/whatsapp.svg" alt="">
+      </a>
+    </div>
+    <a href="tel:+94715771812" class="contact__phone">
+      <img src="assets/phone.svg" alt="">
+      <span>+94 71 577 1812</span>
+    </a>
+  </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>© <span id="year"></span> P T D Fernando — built with HTML, CSS &amp; JavaScript.</p>
+  <a href="#top" class="footer__top">back to top ↑</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
