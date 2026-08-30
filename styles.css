@@ -639,6 +639,8 @@ main {
 .about__text p {
   color: var(--muted);
   margin-bottom: 16px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .about__text strong {
