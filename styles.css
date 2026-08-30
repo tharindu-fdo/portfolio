@@ -914,12 +914,14 @@ main {
 ============================================ */
 .projects__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
 }
 
 .project-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   background: var(--bg-panel);
   border: 1px solid var(--line);
   border-radius: 12px;
@@ -958,6 +960,22 @@ main {
   margin-bottom: 20px;
 }
 
+.project-card__image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  margin-bottom: 22px;
+  filter: saturate(0.8) contrast(1.05);
+  transition: filter 0.4s var(--ease), transform 0.4s var(--ease);
+}
+
+.project-card:hover .project-card__image {
+  filter: saturate(1) contrast(1.05);
+  transform: scale(1.02);
+}
+
 .project-card h3 {
   font-family: var(--font-display);
   font-size: 1.2rem;
@@ -975,6 +993,7 @@ main {
 }
 
 .project-card__link {
+  margin-top: auto;
   font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--accent);
@@ -1370,6 +1389,11 @@ main {
    RESPONSIVE
 ============================================ */
 @media (max-width: 860px) {
+  .terminal__output p {
+    padding-left: 12ch;
+    text-indent: -12ch;
+  }
+
   .about__grid {
     grid-template-columns: 1fr;
     gap: 32px;
